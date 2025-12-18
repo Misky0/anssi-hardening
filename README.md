@@ -54,7 +54,7 @@ L'outil propose une interface interactive par menus avec un mode dry-run, des sa
 ## Installation
 
 ```bash
-git clone https://github.com/Misky0/anssi-hardening.git
+git clone https://github.com/Mishka-sys/anssi-hardening.git
 cd anssi-hardening
 chmod +x anssi-hardening.sh
 ```
