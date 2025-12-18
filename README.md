@@ -76,6 +76,17 @@ sudo ./anssi-hardening.sh
 | `menu` | Retour au menu principal |
 | `quit` | Quitter avec résumé |
 
+### Niveaux de recommandation
+
+L'outil suit les niveaux de recommandation du guide ANSSI PA-085 :
+
+| Niveau | Description |
+|--------|-------------|
+| **R1** | Minimal — Mesures de sécurité essentielles |
+| **R2** | Intermédiaire — Recommandé pour la plupart des systèmes |
+| **R3** | Renforcé — Pour les environnements haute sécurité |
+| **R4+** | Complémentaire — Recommandations spécifiques (R15, R67, etc.) |
+
 ## Modules
 
 ### 1. Configuration système
