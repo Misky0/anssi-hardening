@@ -1,31 +1,31 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-Debian%20%7C%20Ubuntu-orange?style=for-the-badge&logo=linux" alt="Platform">
+  <img src="https://img.shields.io/badge/Plateforme-Debian%20%7C%20Ubuntu-orange?style=for-the-badge&logo=linux" alt="Plateforme">
   <img src="https://img.shields.io/badge/Shell-Bash-green?style=for-the-badge&logo=gnu-bash" alt="Shell">
-  <img src="https://img.shields.io/github/license/Misky0/anssi-hardening?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/github/license/Misky0/anssi-hardening?style=for-the-badge" alt="Licence">
   <img src="https://img.shields.io/badge/ANSSI-PA--085-blue?style=for-the-badge" alt="ANSSI">
 </p>
 
 <h1 align="center">ANSSI Hardening Tool</h1>
 
 <p align="center">
-  <strong>Interactive Linux hardening script based on French ANSSI security guidelines</strong>
+  <strong>Script interactif de durcissement Linux basé sur les recommandations de l'ANSSI</strong>
 </p>
 
 <p align="center">
-  <a href="#features">Features</a> •
+  <a href="#fonctionnalités">Fonctionnalités</a> •
   <a href="#installation">Installation</a> •
-  <a href="#usage">Usage</a> •
+  <a href="#utilisation">Utilisation</a> •
   <a href="#modules">Modules</a> •
-  <a href="#references">References</a>
+  <a href="#références">Références</a>
 </p>
 
 ---
 
-## Overview
+## Présentation
 
-**ANSSI Hardening Tool** is a modular Bash script designed to harden Debian/Ubuntu Linux systems following the [ANSSI PA-085](https://cyber.gouv.fr/publications/recommandations-de-securite-relatives-un-systeme-gnulinux) security recommendations from the French National Cybersecurity Agency.
+**ANSSI Hardening Tool** est un script Bash modulaire conçu pour durcir les systèmes Linux Debian/Ubuntu en suivant les recommandations de sécurité [ANSSI PA-085](https://cyber.gouv.fr/publications/recommandations-de-securite-relatives-un-systeme-gnulinux) de l'Agence nationale de la sécurité des systèmes d'information.
 
-The tool provides an interactive menu-driven interface with dry-run capabilities, automatic backups before any modification, and detailed logging of all actions.
+L'outil propose une interface interactive par menus avec un mode dry-run, des sauvegardes automatiques avant chaque modification, et une journalisation détaillée de toutes les actions.
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════════╗
@@ -42,14 +42,14 @@ The tool provides an interactive menu-driven interface with dry-run capabilities
 ╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
-## Features
+## Fonctionnalités
 
-- **Interactive menu interface** — Easy navigation through security categories
-- **Dry-run mode** — Preview changes before applying them
-- **Automatic backups** — All modified files are backed up with timestamps
-- **Detailed logging** — Complete audit trail in `/var/log/anssi-hardening.log`
-- **Modular architecture** — Clean separation of concerns across modules
-- **ANSSI reference tags** — Each hardening option shows its ANSSI recommendation level (R1-R3)
+- **Interface interactive par menus** — Navigation simple entre les catégories de sécurité
+- **Mode dry-run** — Prévisualisation des modifications avant application
+- **Sauvegardes automatiques** — Tous les fichiers modifiés sont sauvegardés avec horodatage
+- **Journalisation détaillée** — Trace complète dans `/var/log/anssi-hardening.log`
+- **Architecture modulaire** — Séparation claire des fonctionnalités par modules
+- **Références ANSSI** — Chaque option affiche son niveau de recommandation (R1-R3)
 
 ## Installation
 
@@ -59,119 +59,119 @@ cd anssi-hardening
 chmod +x anssi-hardening.sh
 ```
 
-## Usage
+## Utilisation
 
-Run as root:
+Exécuter en tant que root :
 
 ```bash
 sudo ./anssi-hardening.sh
 ```
 
-### Available Commands
+### Commandes disponibles
 
-| Command | Description |
-|---------|-------------|
-| `help` | Display available commands |
-| `back` | Return to previous menu |
-| `menu` | Return to main menu |
-| `quit` | Exit with summary |
+| Commande | Description |
+|----------|-------------|
+| `help` | Afficher l'aide |
+| `back` | Retour au menu précédent |
+| `menu` | Retour au menu principal |
+| `quit` | Quitter avec résumé |
 
-### Recommendation Levels
+### Niveaux de recommandation
 
-The tool follows ANSSI recommendation levels:
+L'outil suit les niveaux de recommandation ANSSI :
 
-| Level | Description |
-|-------|-------------|
-| **R1** | Minimal — Essential security measures |
-| **R2** | Intermediate — Recommended for most systems |
-| **R3** | Enhanced — For high-security environments |
+| Niveau | Description |
+|--------|-------------|
+| **R1** | Minimal — Mesures de sécurité essentielles |
+| **R2** | Intermédiaire — Recommandé pour la plupart des systèmes |
+| **R3** | Renforcé — Pour les environnements haute sécurité |
 
 ## Modules
 
-### 1. System Configuration
-- Disable non-essential services
-- Set secure file permissions
-- Harden kernel parameters (sysctl)
-- Configure secure mount options
-- Blacklist unnecessary kernel modules
-- Secure GRUB bootloader
-- Harden systemd units
+### 1. Configuration système
+- Désactivation des services non essentiels
+- Permissions des fichiers système
+- Durcissement des paramètres kernel (sysctl)
+- Options de montage sécurisées
+- Blacklist des modules kernel inutiles
+- Sécurisation de GRUB
+- Durcissement des unités systemd
 
-### 2. Accounts & Authentication
-- Password policy (login.defs)
-- Password complexity (pam_pwquality)
-- Account lockout (pam_faillock)
-- Inactive account locking
-- Root account security
-- User accounts audit
-- System umask configuration
+### 2. Comptes & authentification
+- Politique de mots de passe (login.defs)
+- Complexité des mots de passe (pam_pwquality)
+- Verrouillage des comptes (pam_faillock)
+- Verrouillage des comptes inactifs
+- Sécurisation du compte root
+- Audit des comptes utilisateurs
+- Configuration du umask système
 
-### 3. SSH Security
-- Hardened SSH configuration
-- SSH key generation guide
-- SSH access group restriction
-- Fail2ban installation & setup
-- SSH port modification
+### 3. Sécurité SSH
+- Configuration SSH durcie
+- Guide de génération de clés SSH
+- Restriction d'accès par groupe SSH
+- Installation et configuration de fail2ban
+- Modification du port SSH
 
-### 4. Network & Firewall
-- Firewall configuration (UFW/nftables)
-- IPv6 hardening
-- TCP Wrappers setup
-- Open ports audit
+### 4. Réseau & pare-feu
+- Configuration du pare-feu (UFW/nftables)
+- Durcissement IPv6
+- Configuration TCP Wrappers
+- Audit des ports ouverts
 
-### 5. Updates & Maintenance
-- Automatic updates (unattended-upgrades)
-- Security updates check
-- System updates
-- Package cleanup
+### 5. Mises à jour & maintenance
+- Mises à jour automatiques (unattended-upgrades)
+- Vérification des mises à jour de sécurité
+- Application des mises à jour système
+- Nettoyage des paquets obsolètes
 
-### 6. Audit & Logging
-- Auditd with ANSSI rules
-- Log rotation configuration
-- Enhanced bash logging
-- Rsyslog verification
-- AIDE integrity checker
+### 6. Audit & journalisation
+- Auditd avec règles ANSSI
+- Configuration de la rotation des logs
+- Journalisation améliorée de bash
+- Vérification rsyslog
+- Vérification d'intégrité AIDE
 
-## File Structure
+## Structure des fichiers
 
 ```
 anssi-hardening/
-├── anssi-hardening.sh    # Main entry point
+├── anssi-hardening.sh    # Point d'entrée principal
 └── lib/
-    ├── core.sh           # Display, logging, utilities
-    ├── system.sh         # System hardening functions
-    ├── accounts.sh       # User & authentication management
-    ├── ssh.sh            # SSH & fail2ban configuration
-    ├── network.sh        # Network & firewall setup
-    ├── updates.sh        # Updates management
-    ├── audit.sh          # Auditing & logging setup
-    └── menus.sh          # Menu interface
+    ├── core.sh           # Affichage, logs, utilitaires
+    ├── system.sh         # Fonctions de durcissement système
+    ├── accounts.sh       # Gestion des comptes et authentification
+    ├── ssh.sh            # Configuration SSH et fail2ban
+    ├── network.sh        # Réseau et pare-feu
+    ├── updates.sh        # Gestion des mises à jour
+    ├── audit.sh          # Audit et journalisation
+    └── menus.sh          # Interface des menus
 ```
 
-## Backups & Logs
+## Sauvegardes & logs
 
-| Path | Description |
-|------|-------------|
-| `/var/backups/anssi-hardening/` | Automatic backups of modified files |
-| `/var/log/anssi-hardening.log` | Detailed action log |
+| Chemin | Description |
+|--------|-------------|
+| `/var/backups/anssi-hardening/` | Sauvegardes automatiques des fichiers modifiés |
+| `/var/log/anssi-hardening.log` | Journal détaillé des actions |
 
-## Requirements
+## Prérequis
 
-- Debian 11+ or Ubuntu 20.04+
-- Root privileges
+- Debian 11+ ou Ubuntu 20.04+
+- Privilèges root
 - Bash 4.0+
 
-## References
+## Références
 
 - [ANSSI PA-085 — Recommandations de sécurité relatives à un système GNU/Linux](https://cyber.gouv.fr/publications/recommandations-de-securite-relatives-un-systeme-gnulinux)
 - [ANSSI — Agence nationale de la sécurité des systèmes d'information](https://cyber.gouv.fr/)
 
-## License
+## Licence
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+Ce projet est sous licence MIT — voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
 <p align="center">
-  <sub>Made with security in mind</sub>
+  <sub>Conçu avec la sécurité en tête</sub>
 </p>
